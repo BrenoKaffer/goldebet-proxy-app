@@ -33,7 +33,7 @@ app.get("/my-ip", (req, res) => {
 
 // 🔁 Proxy reverso para goldebet.bet.br
 const webProxy = createProxyMiddleware({
-  target: "https://goldebet.bet.br",
+  target: "https://www.paddle.com",
   changeOrigin: true,
   secure: true,
   ws: true,
