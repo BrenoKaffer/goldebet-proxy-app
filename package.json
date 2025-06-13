@@ -2,10 +2,10 @@
   "name": "web-integrator",
   "version": "1.0.0",
   "description": "Reverse proxy basico para DigitalOcean App Platform",
-  "main": "server.js",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "node app.js"
   },
   "keywords": [
     "proxy",
@@ -17,7 +17,7 @@
   "author": "Seu Nome",
   "license": "ISC",
   "dependencies": {
-    "express": "5.1.0",
-    "http-proxy-middleware": "3.0.5"
+    "express": "5.1.0",           
+    "http-proxy-middleware": "3.0.5" 
   }
 }

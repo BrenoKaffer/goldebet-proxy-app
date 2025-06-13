@@ -1,4 +1,4 @@
-// server.js
+// app.js
 const express = require("express");
 const { createProxyMiddleware } = require("http-proxy-middleware");
 const { Buffer } = require("buffer");
