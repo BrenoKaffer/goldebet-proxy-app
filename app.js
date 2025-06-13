@@ -5,7 +5,13 @@ const { Buffer } = require("buffer");
 const https = require("https"); // Necessário para o endpoint /my-ip
 
 const app = express();
-const port = process.env.PORT; // ESCUTAR ESTRITAMENTE NA PORTA FORNECIDA PELA APP PLATFORM
+const port = process.env.PORT || 8080; // ATENÇÃO: Agora com fallback para 8080 para facilitar teste local
+
+// --- Endpoint de teste ---
+app.get("/ping", (req, res) => {
+  res.send("Servidor funcionando na App Platform ✅");
+});
+// --- Fim Endpoint de teste ---
 
 // Configuração do site de destino (Goldebet)
 const targetSite = "https://goldebet.bet.br";
@@ -140,8 +146,9 @@ const webProxy = createProxyMiddleware({
 
 app.use("/", webProxy);
 
-app.listen(port, () => {
-  console.log(`Proxy server rodando na porta ${port}`);
+app.listen(port, "0.0.0.0", () => {
+  // ATENÇÃO: Adicionado '0.0.0.0'
+  console.log(`✅ Servidor rodando na porta ${port}`);
   console.log(`Acessando ${targetSite} diretamente (sem proxy residencial).`);
   console.log(
     `Acesse o site através da URL do seu aplicativo na DigitalOcean App Platform.`
