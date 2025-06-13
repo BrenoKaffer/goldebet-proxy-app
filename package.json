@@ -1,18 +1,23 @@
 {
-  "name": "meu-proxy-goldebet",
+  "name": "web-integrator",
   "version": "1.0.0",
-  "description": "",
-  "main": "app.js",
+  "description": "Reverse proxy basico para DigitalOcean App Platform",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node app.js"
+    "start": "node server.js"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "proxy",
+    "reverse-proxy",
+    "iframe",
+    "node.js",
+    "digitalocean"
+  ],
+  "author": "Seu Nome",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.19.2",
-    "http-proxy-middleware": "^3.0.0",
-    "https-proxy-agent": "^7.0.6"
+    "express": "5.1.0",
+    "http-proxy-middleware": "3.0.5"
   }
 }
