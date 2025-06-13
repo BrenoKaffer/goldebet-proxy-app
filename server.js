@@ -28,11 +28,11 @@ let proxyAgent = null;
 let proxyUrl = null;
 
 if (PROXY_HOST && PROXY_PORT && PROXY_USERNAME && PROXY_PASSWORD) {
-  proxyUrl = `http://${PROXY_USERNAME}:${PROXY_PASSWORD}@${PROXY_HOST}:${PROXY_PORT}`;
+  proxyUrl = `http://<span class="math-inline">\{PROXY\_USERNAME\}\:</span>{PROXY_PASSWORD}@<span class="math-inline">\{PROXY\_HOST\}\:</span>{PROXY_PORT}`;
   proxyAgent = new HttpsProxyAgent(proxyUrl);
   console.log(
     "Proxy URL construída (apenas hostname:port):",
-    `${PROXY_HOST}:${PROXY_PORT}`
+    `<span class="math-inline">\{PROXY\_HOST\}\:</span>{PROXY_PORT}`
   );
 } else {
   console.warn(
@@ -179,9 +179,8 @@ const webProxy = createProxyMiddleware({
 app.use("/", webProxy);
 
 app.listen(port, "0.0.0.0", () => {
-  // Adicionado '0.0.0.0' para escutar em todas as interfaces
   console.log(`✅ Servidor rodando na porta ${port}`);
-  console.log(`Acessando ${targetSite} via proxy residencial.`); // Mensagem atualizada para proxy residencial
+  console.log(`Acessando ${targetSite} via proxy residencial.`);
   console.log(
     `Acesse o site através da URL do seu aplicativo na DigitalOcean App Platform.`
   );
